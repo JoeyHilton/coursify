@@ -1,6 +1,9 @@
 class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
+    @comments = @lesson.comments
+    # raise "The Roof!"
+    @comment = @lesson.comments.new
   end
 
   def new

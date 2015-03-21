@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
+  
+
   get '/users' => 'users#index', as: :users
 
   get 'users/show'
 
-  resources :lessons
+  resources :lessons do
+    resources :comments, except: [:index, :show]
+end
+
+
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
