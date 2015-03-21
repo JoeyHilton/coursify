@@ -1,3 +1,6 @@
+  <iframe id="ytplayer" type="text/html" width="100%" height="480"
+  src="<%= embed_youtube_player_url(@lesson.video_url)%>"
+  frameborder="0"></iframe>
 <h3><%= @lesson.name %></h3>
 
 <div role="tabpanel">
@@ -6,6 +9,7 @@
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Notes</a></li>
     <li role="presentation"><a href="#comments" aria-controls="profile" role="tab" data-toggle="tab">Comments</a></li>
+     <li role="presentation"><a href="#lessons" aria-controls="profile" role="tab" data-toggle="tab">Lessons</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -18,11 +22,10 @@
     <div role="tabpanel" class="tab-pane" id="comments">
 
     </div>
-    <div role="tabpanel" class="tab-pane" id="messages">
-
-    </div>
-    <div role="tabpanel" class="tab-pane" id="settings">
-
+    <div role="tabpanel" class="tab-pane" id="lessons">
+      <!-- lesson.course.lessons.each  |lesson| -->
+      <%#= link_to lesson.name, lesson_path(lesson) %>
+      <!-- end -->
     </div>
   </div>
 
