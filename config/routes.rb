@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get '/users' => 'users#index', as: :users
+
+  get 'users/show'
+
   resources :lessons
   root 'static_pages#home'
 
@@ -9,6 +13,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+
+  resources :users, :only => [:show, :index]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
