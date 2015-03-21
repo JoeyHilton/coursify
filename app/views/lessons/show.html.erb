@@ -1,1 +1,41 @@
+<h3><%= @lesson.name %></h3>
 
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Notes</a></li>
+    <li role="presentation"><a href="#comments" aria-controls="profile" role="tab" data-toggle="tab">Comments</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <div class="well well-lg" style="margin-top: 25px;">
+        <p><%= @lesson.description %></p>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="comments">
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+$('#home a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+$('#comments a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
