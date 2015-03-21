@@ -23,8 +23,8 @@ class LessonsController < ApplicationController
 
   def update
     @lesson = Lesson.find(params[:id])
-    if @lesson.update(params[:id])
-      @lesson.save
+    if @lesson.update_attributes(lesson_params)
+      redirect_to root_path
     else
       render 'edit'
     end
