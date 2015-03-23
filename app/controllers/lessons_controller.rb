@@ -1,3 +1,4 @@
+# before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])

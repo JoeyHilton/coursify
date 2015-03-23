@@ -21,15 +21,17 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="comments">
       <% @comments.each do |comment| %>
-        <blockquote>
-          <p><%= comment.body %></p>
-          <footer><%= comment.user.name %>
-          <% if comment.user == current_user && user_signed_in? %>
-            <%= link_to "EDIT", edit_lesson_comment_path(@lesson, comment) %>
-            <%= link_to "DELETE", lesson_comment_path(@lesson, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </footer>
-          <% end %>
-        </blockquote>
+        <% if comment.id %>
+          <blockquote>
+            <p><%= comment.body %></p>
+            <footer><%= comment.user.name %>
+            <% if comment.user == current_user && user_signed_in? %>
+              <%= link_to "EDIT", edit_lesson_comment_path(@lesson, comment) %>
+              <%= link_to "DELETE", lesson_comment_path(@lesson, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </footer>
+            <% end %>
+          </blockquote>
+        <% end %>
       <% end %>
       <%= render 'comments/form' %>
     </div>

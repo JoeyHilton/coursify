@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.user == current_user
       @comment.destroy
-      redirect_to @post
+      redirect_to @lesson
     else
       redirect_to @lesson, notice: "Sorry Charlie!"
     end
